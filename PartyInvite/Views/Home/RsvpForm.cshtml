@@ -1,0 +1,50 @@
+﻿@model PartyInvite.Models.GuestResponce
+@{
+    ViewData["Title"] = "RsvpForm";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <title>RsvpForm</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header text-center"><h4>RSVP</h4></div>
+        <div class="card-body">
+            <form class="p-a-1" asp-action="RsvpForm" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="form-group">
+
+                    <label asp-for="Name">Name:</label>
+                    <input asp-for="Name" />
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Email">Email:</label>
+                    <input asp-for="Email" />
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Phone">Phone:</label>
+                    <input asp-for="Phone" />
+                </div>
+                <div class="form-group">
+
+                    <label>Will you attend?</label>
+                    <select asp-for="WillAttend">
+                        <option value="">Choose an option</option>
+                        <option value="true">Yes, I'll be</option>
+                        <option value="false">No, I can't come</option>
+                    </select>
+                     </div>
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit">Submit RSVP</button>
+                </div>
+            </form>
+            </div>
+        </div>
+</body>
+</html>

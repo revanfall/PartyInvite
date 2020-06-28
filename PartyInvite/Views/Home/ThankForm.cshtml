@@ -1,0 +1,32 @@
+﻿    @model PartyInvite.Models.GuestResponce
+@{
+    ViewData["Title"] = "ThankForm";
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body class="text-center">
+        <p>
+            <h1>Thank you,@Model.Name</h1>
+            @if(Model.WillAttend == true) 
+            {
+            @:Thanks for coming. We are waiting for you.
+            }
+            else {
+                @:Sorry to hear that yo can't make it, looking forward for the next time. 
+            }
+        </p>
+        <p>
+            Click <a asp-action="ListResponses"> here</a> to see who is coming.
+
+        </p>
+  </body>
+</html>

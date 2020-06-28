@@ -1,0 +1,44 @@
+﻿
+
+@model IEnumerable<PartyInvite.Models.GuestResponce>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responses</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
+</head>
+<body>
+    <div class="card-body">
+        <h2>The list of persons attending the party</h2>
+        
+        <table class="table table-sm table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (PartyInvite.Models.GuestResponce resp in Model)
+                {
+                    <tr>
+                        <td>@resp.Name</td>
+                        <td>@resp.Email</td>
+                        <td>@resp.Phone</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
+
+
